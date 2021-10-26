@@ -1,0 +1,21 @@
+.my-account {
+  margin-right: 5px;
+}
+
+.log-out {
+  margin-right: 25px;
+}
+
+.title-content {
+  margin-left: 5px;
+}
+
+.license-expiration-panel {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.license-expiration-panel .license-expiration-message {
+  text-align: justify;
+}
