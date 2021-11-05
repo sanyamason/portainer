@@ -1,0 +1,13 @@
+.rc-slider-handle {
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: -8px !important;
+}
+
+.rc-slider-mark-text, .rc-slider-tooltip-inner {
+    font-family: Montserrat, serif;
+}
+
+.slider-container {
+    padding: 50px;
+}

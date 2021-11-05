@@ -204,7 +204,7 @@ html {
 }
 body {
   background: var(--bg-body-color);
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', serif !important;
   color: var(--text-body-color) !important;
 }
 .row {
