@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import Slider, { SliderTooltip } from 'rc-slider';
 
-import './Slider.css';
+import styles from './Slider.module.css';
 import 'rc-slider/assets/index.css';
+import './Slider.css';
 
 const { Handle } = Slider;
 
@@ -10,30 +10,25 @@ export interface Props {
   min: number;
   max: number;
   step: number;
-  value?: number;
+  value: number;
+  onChange: (value: number) => void;
 }
 
-export function CustomSlider({ min, max, step, value = min }: Props) {
-  const [sliderValue, setSliderValue] = useState(value);
-
-  function onSliderChange(newValue: number) {
-    setSliderValue(newValue);
-  }
-
+export function CustomSlider({ min, max, step, value, onChange }: Props) {
   const marks = {
     [min]: translateMinValue(min),
     [max]: max.toString(),
   };
 
   return (
-    <div className="slider-container">
+    <div className={styles.sliderContainer}>
       <Slider
         min={min}
         max={max}
         step={step}
-        value={sliderValue}
+        value={value}
         marks={marks}
-        onChange={(v) => onSliderChange(v)}
+        onChange={onChange}
         handle={(props) => customHandle(props)}
       />
     </div>
