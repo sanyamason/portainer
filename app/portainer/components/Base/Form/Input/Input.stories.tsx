@@ -17,10 +17,11 @@ function Template({
   validation,
 }: JSX.IntrinsicAttributes & PropsWithChildren<Props>) {
   const [localValue, setValue] = useState(value);
-  // eslint-disable-next-line func-style
-  const onChangeInput = (inputValue: string) => {
+
+  function onChangeInput(inputValue: string) {
     setValue(inputValue);
-  };
+  }
+
   return (
     <Input
       value={localValue}
@@ -28,7 +29,7 @@ function Template({
       label={label}
       placeholder={placeholder}
       tooltipMessage={tooltipMessage}
-      customOnChange={onChangeInput}
+      onChange={onChangeInput}
       validation={validation}
     />
   );
@@ -37,7 +38,7 @@ function Template({
 export const Primary: Story<Props> = Template.bind({});
 Primary.args = {
   type: 'text',
-  label: 'Environment URL',
+  label: 'Environment URL2',
   placeholder: '10.0.0.10:5000 or myregistry.domain.tld',
   value: '',
   tooltipMessage:

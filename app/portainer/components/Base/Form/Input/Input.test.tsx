@@ -9,7 +9,7 @@ function renderDefault({
   placeholder = '',
   tooltipMessage = '',
   value = '',
-  customOnChange = () => {},
+  onChange = () => {},
   validation,
   children = null,
 }: Partial<PropsWithChildren<Props>> = {}) {
@@ -20,7 +20,7 @@ function renderDefault({
       placeholder={placeholder}
       tooltipMessage={tooltipMessage}
       value={value}
-      customOnChange={customOnChange}
+      onChange={onChange}
       validation={validation}
     >
       {children}

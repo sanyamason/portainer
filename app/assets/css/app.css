@@ -170,7 +170,7 @@ a[ng-click] {
 }
 
 .text-warning {
-  color: #f0ad4e !important;
+  color: #f0ad4e;
 }
 
 .widget .widget-body table tbody .image-tag {

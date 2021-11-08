@@ -2,16 +2,27 @@ import { ChangeEvent, PropsWithChildren, useState } from 'react';
 
 import { Tooltip } from '@/portainer/components/Base/Form/Tooltip/Tooltip';
 
-import './Input.css';
+import styles from './Input.module.css';
 
-type Type = 'text' | 'number';
+type Type =
+  | 'button'
+  | 'checkbox'
+  | 'color'
+  | 'date'
+  | 'email'
+  | 'file'
+  | 'image'
+  | 'number'
+  | 'password'
+  | 'tel'
+  | 'text';
 export interface Props {
   type: Type;
   label: string;
+  value: string;
+  onChange: (value: string) => void;
   placeholder?: string;
   tooltipMessage?: string;
-  value?: string;
-  customOnChange?: (value: string) => void;
   validation?: (value: string | undefined) => string;
 }
 
@@ -21,16 +32,14 @@ export function Input({
   placeholder,
   tooltipMessage = '',
   value,
-  customOnChange,
+  onChange,
   validation,
 }: PropsWithChildren<Props>) {
   const [inputValue, setInputValue] = useState(value);
 
-  function onChange(value: ChangeEvent<HTMLInputElement>) {
+  function handleChange(value: ChangeEvent<HTMLInputElement>) {
     setInputValue(value.target.value);
-    if (customOnChange) {
-      customOnChange(value.target.value);
-    }
+    onChange(value.target.value);
   }
 
   const validationMessage = !validation ? null : validation(inputValue);
@@ -51,7 +60,7 @@ export function Input({
             className="form-control"
             name={`${label}_name`}
             value={value}
-            onChange={(v) => onChange(v)}
+            onChange={(v) => handleChange(v)}
             placeholder={placeholder}
             required
           />
@@ -59,7 +68,7 @@ export function Input({
       </div>
       {validationMessage && (
         <div className="form-group">
-          <div className="col-sm-12 small text-warning">
+          <div className={`col-sm-12 small ${styles.inputValidation}`}>
             <div>
               <p>
                 <i className="fa fa-exclamation-triangle" aria-hidden="true" />
