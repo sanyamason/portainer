@@ -50,6 +50,7 @@ type (
 		AdminPasswordFile         *string
 		Assets                    *string
 		Data                      *string
+		DemoEnvironment           *bool
 		EnableEdgeComputeFeatures *bool
 		EndpointURL               *string
 		Labels                    *[]Pair
@@ -817,7 +818,8 @@ type (
 		// Portainer API version
 		Version string `json:"Version" example:"2.0.0"`
 		// Server Instance ID
-		InstanceID string `example:"299ab403-70a8-4c05-92f7-bf7a994d50df"`
+		InstanceID      string `example:"299ab403-70a8-4c05-92f7-bf7a994d50df"`
+		DemoEnvironment bool
 	}
 
 	// Tag represents a tag that can be associated to a resource
