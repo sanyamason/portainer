@@ -38,11 +38,11 @@ function Template({
 export const Primary: Story<Props> = Template.bind({});
 Primary.args = {
   type: 'text',
-  label: 'Environment URL2',
+  label: 'Environment URL',
   placeholder: '10.0.0.10:5000 or myregistry.domain.tld',
   value: '',
   tooltipMessage:
-    'URL or IP address of a Docker registry. Any protocol and trailing slash will be stripped if present.',
+    'URL or IP address of a Docker registry. <br> Any protocol and trailing slash will be stripped if present.',
   validation: (v) => {
     if (!v) {
       return 'This field is required';

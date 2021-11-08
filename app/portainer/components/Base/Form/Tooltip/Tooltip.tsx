@@ -1,37 +1,38 @@
-import { useState } from 'react';
+import ReactTooltip from 'react-tooltip';
 
 import styles from './Tooltip.module.css';
 
+type Place = 'top' | 'right' | 'bottom' | 'left';
+type Type = 'dark' | 'success' | 'warning' | 'error' | 'info' | 'light';
+type Effect = 'float' | 'solid';
 export interface Props {
   content: string;
+  place?: Place;
+  type?: Type;
+  effect?: Effect;
 }
 
-export function Tooltip({ content }: Props) {
-  let timeout: NodeJS.Timeout;
-  const [active, setActive] = useState(false);
-
-  function showTip() {
-    timeout = setTimeout(() => {
-      setActive(true);
-    }, 100);
-  }
-
-  function hideTip() {
-    clearInterval(timeout);
-    setActive(false);
-  }
-
+export function Tooltip({
+  content,
+  place = 'bottom',
+  type = 'info',
+  effect = 'solid',
+}: Props) {
   return (
-    <div
-      className={`${styles.tooltipWrapper} interactive`}
-      onMouseEnter={showTip}
-      onMouseLeave={hideTip}
-    >
+    <div className={styles.tooltipWrapper}>
       <i
-        className="fa fa-question-circle blue-icon tooltip-icon"
+        className="fa fa-question-circle blue-icon tooltip-icon interactive"
         aria-hidden="true"
+        data-tip={content}
       />
-      {active && <div className={`${styles.tooltipTip}`}>{content}</div>}
+      <ReactTooltip
+        multiline
+        type={type}
+        place={place}
+        effect={effect}
+        border={type === 'light'}
+        borderColor="#ccc"
+      />
     </div>
   );
 }

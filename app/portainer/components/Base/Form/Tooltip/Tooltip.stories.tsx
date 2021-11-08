@@ -7,11 +7,16 @@ export default {
   title: 'Components/Form/Tooltip',
 } as Meta;
 
-function Template({ content }: JSX.IntrinsicAttributes & Props) {
+function Template({
+  content,
+  place,
+  type,
+  effect,
+}: JSX.IntrinsicAttributes & Props) {
   return (
-    <div className="col-sm-3 col-lg-2" style={{ height: '150px' }}>
+    <div className="col-sm-3 col-lg-2">
       Example tooltip
-      <Tooltip content={content} />
+      <Tooltip content={content} type={type} place={place} effect={effect} />
     </div>
   );
 }
@@ -19,4 +24,7 @@ function Template({ content }: JSX.IntrinsicAttributes & Props) {
 export const Primary: Story<Props> = Template.bind({});
 Primary.args = {
   content: 'Tooltip example',
+  type: 'info',
+  place: 'bottom',
+  effect: 'solid',
 };
