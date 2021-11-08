@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 
 import { Switch, Props } from './Switch';
 
@@ -13,8 +13,13 @@ function Template({
   checked,
   children,
 }: JSX.IntrinsicAttributes & PropsWithChildren<Props>) {
+  const [isChecked, setIsChecked] = useState(checked);
+  function onChange() {
+    setIsChecked(!isChecked);
+  }
+
   return (
-    <Switch name={name} checked={checked}>
+    <Switch name={name} checked={isChecked} onChange={onChange}>
       {children}
     </Switch>
   );

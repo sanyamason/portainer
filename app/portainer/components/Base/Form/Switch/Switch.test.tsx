@@ -9,7 +9,7 @@ function renderDefault({
   children = null,
 }: Partial<PropsWithChildren<Props>> = {}) {
   return render(
-    <Switch name={name} checked={checked}>
+    <Switch name={name} checked={checked} onChange={() => {}}>
       {children}
     </Switch>
   );

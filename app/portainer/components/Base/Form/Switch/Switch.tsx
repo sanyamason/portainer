@@ -1,23 +1,19 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren } from 'react';
 
 import './Switch.css';
 
 export interface Props {
   name: string;
   checked: boolean;
+  onChange: () => void;
 }
 
 export function Switch({
   name,
-  checked = false,
+  checked,
   children,
+  onChange,
 }: PropsWithChildren<Props>) {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  function onChangeChecked() {
-    setIsChecked(!isChecked);
-  }
-
   return (
     <div className="form-group">
       <div className="col-sm-12">
@@ -28,10 +24,10 @@ export function Switch({
           <input
             type="checkbox"
             name={name}
-            checked={isChecked}
+            checked={checked}
             onChange={() => {}}
           />
-          <i aria-hidden="true" onClick={onChangeChecked} />
+          <i aria-hidden="true" onClick={onChange} />
         </label>
       </div>
     </div>
