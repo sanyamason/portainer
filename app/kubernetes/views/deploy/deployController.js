@@ -5,7 +5,8 @@ import uuidv4 from 'uuid/v4';
 import PortainerError from 'Portainer/error';
 
 import { KubernetesDeployManifestTypes, KubernetesDeployBuildMethods, KubernetesDeployRequestMethods, RepositoryMechanismTypes } from 'Kubernetes/models/deploy';
-import { buildOption } from '@/portainer/components/box-selector';
+import { buildOption } from '@/portainer/components/BoxSelector';
+
 class KubernetesDeployController {
   /* @ngInject */
   constructor(
@@ -79,6 +80,8 @@ class KubernetesDeployController {
     this.getNamespacesAsync = this.getNamespacesAsync.bind(this);
     this.onChangeFormValues = this.onChangeFormValues.bind(this);
     this.buildAnalyticsProperties = this.buildAnalyticsProperties.bind(this);
+    this.onChangeMethod = this.onChangeMethod.bind(this);
+    this.onChangeDeployType = this.onChangeDeployType.bind(this);
   }
 
   buildAnalyticsProperties() {
@@ -131,6 +134,14 @@ class KubernetesDeployController {
           return 'manifest';
       }
     }
+  }
+
+  onChangeMethod(method) {
+    this.state.BuildMethod = method;
+  }
+
+  onChangeDeployType(type) {
+    this.state.DeployType = type;
   }
 
   disableDeploy() {
