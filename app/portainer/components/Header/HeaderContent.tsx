@@ -1,36 +1,37 @@
 import { PropsWithChildren } from 'react';
+import clsx from 'clsx';
 
 import { Link } from '@/portainer/components/Link';
+import { useUser } from '@/portainer/hooks/useUser';
 
-import styles from './Header.module.css';
+import controller from './HeaderContent.controller';
+import styles from './HeaderContent.module.css';
+import { useHeaderContext } from './Header';
 
-interface Props {
-  userName?: string;
-}
+export function HeaderContent({ children }: PropsWithChildren<unknown>) {
+  useHeaderContext();
+  const { user } = useUser();
 
-export function HeaderContent({
-  userName,
-  children,
-}: PropsWithChildren<Props>) {
   return (
     <div className="breadcrumb-links">
       <div className="pull-left">{children}</div>
-      {userName && (
+      {user && (
         <div className="pull-right">
           <Link to="portainer.account" className={styles.myAccount}>
             <u>
               <i className="fa fa-wrench" aria-hidden="true" />
-              {' my account '}
+              my account
             </u>
           </Link>
           <Link
             to="portainer.logout"
             params={{ performApiLogout: true }}
-            className={`text-danger ${styles.logOut}`}
+            className={clsx('text-danger', styles.logOut)}
+            data-cy="template-logoutButton"
           >
             <u>
               <i className="fa fa-sign-out-alt" aria-hidden="true" />
-              {' log out'}
+              log out
             </u>
           </Link>
         </div>
@@ -38,3 +39,10 @@ export function HeaderContent({
     </div>
   );
 }
+
+export const HeaderContentAngular = {
+  requires: '^rdHeader',
+  transclude: true,
+  templateUrl: './HeaderContent.html',
+  controller,
+};
