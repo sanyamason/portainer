@@ -4429,7 +4429,6 @@ angular-moment-picker@^0.10.2:
   dependencies:
     angular-mocks "1.6.1"
     angular-sanitize "1.6.1"
-    lodash-es "^4.17.15"
 
 angular-resource@1.8.0:
   version "1.8.0"
@@ -5974,10 +5973,10 @@ chardet@^1.3.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.3.0.tgz#a56ed2d9e4517a7128721340a0cb9a10a8fac238"
   integrity sha512-cyTQGGptIjIT+CMGT5J/0l9c6Fb+565GCFjjeUTKxUO7w3oR+FcNCMEKTn5xtVKaLFmladN7QF68IiQsv5Fbdw==
 
-chart.js@~2.7.0:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.3.tgz#cdb61618830bf216dc887e2f7b1b3c228b73c57e"
-  integrity sha512-3+7k/DbR92m6BsMUYP6M0dMsMVZpMnwkUyNSAbqolHKsbIzH2Q4LWVEHHYq7v0fmEV8whXE0DrjANulw9j2K5g==
+chart.js@~2.9.4:
+  version "2.9.4"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.9.4.tgz#0827f9563faffb2dc5c06562f8eb10337d5b9684"
+  integrity sha512-B07aAzxcrikjAPyV+01j7BmOpxtQETxTSlQ26BEYJ+3iUkbNKaOJ/nDbT6JjyqYxseM0ON12COHYdU2cTIjC7A==
   dependencies:
     chartjs-color "^2.1.0"
     moment "^2.10.2"
@@ -6260,10 +6259,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codemirror@~5.30.0:
-  version "5.30.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.30.0.tgz#86e57dd5ea5535acbcf9c720797b4cefe05b5a70"
-  integrity sha512-pfJV/7fLAUUenuGK3iANkQu1AxNLuWpeF7HV6YFDjSBMp53F8FTa2F6oPs9NKAHFweT2m08usmXUIA+7sohdew==
+codemirror@~5.58.2:
+  version "5.58.3"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.58.3.tgz#3f0689854ecfbed5d4479a98b96148b2c3b79796"
+  integrity sha512-KBhB+juiyOOgn0AqtRmWyAT3yoElkuvWTI6hsHa9E6GQrl6bk/fdAYcvuqW1/upO9T9rtEtapWdw4XYcNiVDEA==
 
 coffee-script@^1.10.0:
   version "1.12.7"
@@ -13300,7 +13299,7 @@ moment@^2.10.2:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
-moment@^2.16.0, moment@^2.21.0:
+moment@^2.16.0:
   version "2.27.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
   integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
@@ -13309,6 +13308,11 @@ moment@^2.27.0:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.0.tgz#fcbef955844d91deb55438613ddcec56e86a3425"
   integrity sha512-z6IJ5HXYiuxvFTI6eiQ9dm77uE0gyy1yXNApVHqTcnIKfY9tIwEjlzsZ6u1LQXvVgKeTnv9Xm7NDvJ7lso3MtA==
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
